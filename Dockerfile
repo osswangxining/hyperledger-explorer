@@ -8,7 +8,7 @@ MAINTAINER Xi Ning Wang <osswangxining.github.com>
 #RUN npm install bower grunt-cli graceful-fs@4.1.5 minimatch@3.0.2 -g
 
 # clone latest code from github
-RUN git clone --single-branch -b master --depth 1 https://github.com/hyperledger/blockchain-explorer.git
+RUN git clone --single-branch -b master --depth 1 https://github.com/osswangxining/blockchain-explorer.git
 
 WORKDIR /blockchain-explorer
 
@@ -20,6 +20,6 @@ WORKDIR /blockchain-explorer
 # RUN npm install --only=production
 RUN npm install
 
-VOLUME /blockchain-explorer
+#VOLUME /blockchain-explorer
 EXPOSE 8080
 CMD ["bash", "start.sh"]

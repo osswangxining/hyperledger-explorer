@@ -12,8 +12,9 @@ Running your image with -d runs the container in detached mode, leaving the cont
 
 Run the image you previously built:
 ```
-docker run  -p 8080:8080 -d osswangxining/hyperledger-explorer
+docker run -v /Users/xiningwang/blockchain/blockchain-explorer/config.json:/blockchain-explorer/config.json -v /Users/xiningwang/Downloads/fabric-samples-1.1.0/first-network/crypto-config:/first-network/crypto-config -p 8080:8080 -d osswangxining/hyperledger-explorer
 ```
+docker run -v /Users/xiningwang/blockchain/blockchain-explorer/config.json:/blockchain-explorer/config.json -v /Users/xiningwang/Downloads/fabric-samples-1.1.0/first-network/crypto-config:/first-network/crypto-config  -p 8080:8080   -it osswangxining/hyperledger-explorer bash
 
 ## Push Docker images to your namespace
 Upload (push) the image to your namespace. Replace <my_namespace> with your namespace, and <image_repo> and <tag> with the repository and the tag of the image that you chose when you tagged the image.
