@@ -18,8 +18,8 @@ WORKDIR /blockchain-explorer
 # Modify config.json to update the value of pg host, username, password details.
 # If you are building your code for production
 # RUN npm install --only=production
-RUN npm install
-
+RUN npm install && cd client/ && npm install \
+     && npm test -- -u --coverage && npm run build
 #VOLUME /blockchain-explorer
 EXPOSE 8080
 CMD ["bash", "start.sh"]
